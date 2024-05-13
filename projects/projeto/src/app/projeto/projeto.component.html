@@ -1,0 +1,44 @@
+<div class="container">
+
+  <div class="search-bar">
+    <input type="text" class="form-control" placeholder="Search by name" [(ngModel)]="nomeFiltro" aria-label="Search by name">
+    <button class="btn btn-primary" type="button" (click)="filtrarPorNome()">Search</button>
+  </div>
+
+  <!-- Lista de projetos -->
+  <table>
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Start Date</th>
+        <th>End Date</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      @for (proj of projetos; track $index){
+        <tr>
+          <td>{{proj.name}}</td>
+          <td>{{proj.startDate}}</td>
+          <td>{{proj.endDate}}</td>
+        </tr>
+      }
+    </tbody>
+  </table>
+
+  <!-- Adicionar projeto -->
+  <div *ngIf="showAddForm" class="add-project-form">
+    <div class="form-overlay"></div> <!-- Fundo escuro para destacar o formulário -->
+    <div class="form-container">
+      <span class="close" (click)="showAddForm = false">&times;</span>
+      <app-add-projetos (projectAdded)="onProjetoAdded($event)"></app-add-projetos>
+    </div>
+  </div>
+  
+  <!-- Botão de adicionar projeto -->
+  <div class="add-project-btn">
+    <button class="btn btn-primary" type="button" (click)="showAddForm = true">Add Project</button>
+  </div>
+</div>
+
+  
