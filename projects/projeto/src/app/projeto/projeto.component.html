@@ -1,9 +1,10 @@
 <div class="container">
 
   <div class="search-bar">
-    <input type="text" class="form-control" placeholder="Search by name" [(ngModel)]="nomeFiltro" aria-label="Search by name">
-    <button class="btn btn-primary" type="button" (click)="filtrarPorNome()">Search</button>
+    <input type="text" id="searchInput" class="form-control" placeholder="Search by name" [(ngModel)]="nomeFiltro" aria-label="Search by name">
+    <button id="searchButton" class="btn btn-primary" type="button" (click)="filtrarPorNome()">Search</button>
   </div>
+  
 
   <!-- Lista de projetos -->
   <table>
@@ -27,7 +28,7 @@
   </table>
 
   <!-- Adicionar projeto -->
-  <div *ngIf="showAddForm" class="add-project-form">
+  <div *ngIf="showAddForm" class="add-project-form" id="adicionarP">
     <div class="form-overlay"></div> <!-- Fundo escuro para destacar o formulário -->
     <div class="form-container">
       <span class="close" (click)="showAddForm = false">&times;</span>
@@ -37,8 +38,9 @@
   
   <!-- Botão de adicionar projeto -->
   <div class="add-project-btn">
-    <button class="btn btn-primary" type="button" (click)="showAddForm = true">Add Project</button>
+    <button id="add-project-button" class="btn btn-primary" type="button" (click)="showAddForm = true">Add Project</button>
   </div>
+  
 </div>
 
   

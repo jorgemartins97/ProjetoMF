@@ -17,7 +17,7 @@
       <input id="end-date" type="date" #endDate required>
     </div>
   
-    <button type="button" class="btn btn-secondary btn-lg btn-block" (click)="add(projectName.value, startDate.value, endDate.value); projectName.value=''; startDate.value=''; endDate.value=''">
+    <button id="buttonAdd" type="button" class="btn btn-secondary btn-lg btn-block" (click)="add(projectName.value, startDate.value, endDate.value); projectName.value=''; startDate.value=''; endDate.value=''">
       Add Project
     </button>
   </div>
